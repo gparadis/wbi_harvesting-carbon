@@ -4,3 +4,4 @@ cache/*
 output/*
 input/gis/shp/*
 .Rproj.user
+.Rhistory
