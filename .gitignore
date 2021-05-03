@@ -1,4 +1,6 @@
+*~
 gurobi.log
 cache/*
 output/*
 input/gis/shp/*
+.Rproj.user
