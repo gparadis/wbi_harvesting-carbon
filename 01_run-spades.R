@@ -38,18 +38,18 @@ target.masks <- list(c('? ? ? ?'))
 target.areas <- list(1000)
 
 # for the "less" scenarios
-target.scalefactors <- list(tsa08 = 0.5, 
-                            tsa16 = 0.5,
-                            tsa24 = 0.5,
-                            tsa40 = 0.5,
-                            tsa41 = 0.5)
+#target.scalefactors <- list(tsa08 = 0.5, 
+#                            tsa16 = 0.5,
+#                            tsa24 = 0.5,
+#                            tsa40 = 0.5,
+#                            tsa41 = 0.5)
 
 # for the "base" scenario
-#target.scalefactors <- list(tsa08 = 1.0, 
-#                            tsa16 = 1.0,
-#                            tsa24 = 1.0,
-#                            tsa40 = 1.0,
-#                            tsa41 = 1.0)
+target.scalefactors <- list(tsa08 = 1.0, 
+                            tsa16 = 1.0,
+                            tsa24 = 1.0,
+                            tsa40 = 1.0,
+                            tsa41 = 1.0)
 
 params <- list(spades_ws3_dataInit = list(basenames = basenames,
                                           tifPath = tifPath,
@@ -74,27 +74,16 @@ sim <- simInit(paths=paths, modules=modules, times=times, params=params, outputs
 simOut <- spades(sim, debug=TRUE)
 
 
-years <- 2020:2099
-burned.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa08/projected_fire_', x, '.tif')), sum) * 6.25)})
-burned.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa16/projected_fire_', x, '.tif')), sum) * 6.25)})
-burned.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa24/projected_fire_', x, '.tif')), sum) * 6.25)})
-burned.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa40/projected_fire_', x, '.tif')), sum) * 6.25)})
-burned.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa41/projected_fire_', x, '.tif')), sum) * 6.25)})
+#years <- 2020:2099
+#burned.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa08/projected_fire_', x, '.tif')), sum) * 6.25)})
+#burned.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa16/projected_fire_', x, '.tif')), sum) * 6.25)})
+#burned.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa24/projected_fire_', x, '.tif')), sum) * 6.25)})
+#burned.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa40/projected_fire_', x, '.tif')), sum) * 6.25)})
+#burned.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa41/projected_fire_', x, '.tif')), sum) * 6.25)})
 
-harvested.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa08/projected_harvest_', x, '.tif')), sum) * 6.25)})
-harvested.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa16/projected_harvest_', x, '.tif')), sum) * 6.25)})
-harvested.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa24/projected_harvest_', x, '.tif')), sum) * 6.25)})
-harvested.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa40/projected_harvest_', x, '.tif')), sum) * 6.25)})
-harvested.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa41/projected_harvest_', x, '.tif')), sum) * 6.25)})
+#harvested.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa08/projected_harvest_', x, '.tif')), sum) * 6.25)})
+#harvested.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa16/projected_harvest_', x, '.tif')), sum) * 6.25)})
+#harvested.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa24/projected_harvest_', x, '.tif')), sum) * 6.25)})
+#harvested.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa40/projected_harvest_', x, '.tif')), sum) * 6.25)})
+#harvested.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/tif/tsa41/projected_harvest_', x, '.tif')), sum) * 6.25)})
 
-#burned.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa08/projected_fire_', x, '.tif')), sum) * 6.25)})
-#burned.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa16/projected_fire_', x, '.tif')), sum) * 6.25)})
-#burned.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa24/projected_fire_', x, '.tif')), sum) * 6.25)})
-#burned.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa40/projected_fire_', x, '.tif')), sum) * 6.25)})
-#burned.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa41/projected_fire_', x, '.tif')), sum) * 6.25)})
-
-#harvested.area.tsa08 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa08/projected_harvest_', x, '.tif')), sum) * 6.25)})
-#harvested.area.tsa16 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa16/projected_harvest_', x, '.tif')), sum) * 6.25)})
-#harvested.area.tsa24 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa24/projected_harvest_', x, '.tif')), sum) * 6.25)})
-#harvested.area.tsa40 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa40/projected_harvest_', x, '.tif')), sum) * 6.25)})
-#harvested.area.tsa41 <- sapply(years, function(x){return(cellStats(raster(paste0('input/foo/tif/tsa41/projected_harvest_', x, '.tif')), sum) * 6.25)})
