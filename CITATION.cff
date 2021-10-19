@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "If you use this code, please cite it as below."
+authors:
+  - family-names: Paradis
+    given-names: Gregory
+    orcid: https://orcid.org/0000-0001-9618-8797
+title: "Harvesting Disturbance Module (HDM), WBI carbon paper (2020)"
+version: 1.0.0
+doi: 10.5281/zenodo.5579696
+date-released: 2021-11-01
