@@ -7,3 +7,5 @@ Note that spades modules are set up as git submodules, so you will need to run `
 Run `01_run-spades.R` to do the thing. Code runs the "base" scenario (you will need to adjust `target.scalefactors` to run "reduced harvest level" scenario).
 
 If you run into any problems, contact [Greg Paradis](mailto:0@01101.io).
+
+[![DOI](https://zenodo.org/badge/345519644.svg)](https://zenodo.org/badge/latestdoi/345519644)
